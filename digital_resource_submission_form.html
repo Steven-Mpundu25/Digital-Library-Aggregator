@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Resource Submission</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Submit a Digital Resource</h1>
+        <form action="/submit-resource" method="POST" enctype="multipart/form-data">
+            <!-- User Details Section -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="role" class="form-label">User Role</label>
+                <select class="form-select" id="role" name="role" required>
+                    <option value="">Select Role</option>
+                    <option value="Student">Student</option>
+                    <option value="Faculty">Faculty</option>
+                    <option value="Library Staff">Library Staff</option>
+                </select>
+            </div>
+
+            <!-- Resource Details Section -->
+            <div class="mb-3">
+                <label for="title" class="form-label">Resource Title</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Resource Type</label>
+                <select class="form-select" id="type" name="type" required>
+                    <option value="">Select Type</option>
+                    <option value="eBook">eBook</option>
+                    <option value="Research Paper">Research Paper</option>
+                    <option value="Multimedia">Multimedia</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="author" class="form-label">Author(s)</label>
+                <input type="text" class="form-control" id="author" name="author" required>
+            </div>
+            <div class="mb-3">
+                <label for="pub_date" class="form-label">Publication Date</label>
+                <input type="date" class="form-control" id="pub_date" name="pub_date" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="keywords" class="form-label">Keywords (comma-separated)</label>
+                <input type="text" class="form-control" id="keywords" name="keywords">
+            </div>
+
+            <!-- File Upload Section -->
+            <div class="mb-3">
+                <label for="file" class="form-label">Upload File</label>
+                <input type="file" class="form-control" id="file" name="file" accept=".pdf,.doc,.docx,.mp4,.mp3" required>
+            </div>
+
+            <!-- Permissions Section -->
+            <div class="mb-3">
+                <label class="form-label">Access Level</label>
+                <div>
+                    <input type="radio" id="public" name="access_level" value="Public" required>
+                    <label for="public">Public</label>
+                </div>
+                <div>
+                    <input type="radio" id="restricted" name="access_level" value="Restricted" required>
+                    <label for="restricted">Restricted</label>
+                </div>
+                <div>
+                    <input type="radio" id="private" name="access_level" value="Private" required>
+                    <label for="private">Private</label>
+                </div>
+            </div>
+
+            <!-- Submission Confirmation Section -->
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="confirmation" name="confirmation" required>
+                <label class="form-check-label" for="confirmation">I confirm that I have the rights to submit this resource.</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit Resource</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
